@@ -33,7 +33,7 @@ Console.WriteLine(fluentCar);
 #endregion
 
 /// <summary>
-/// Basic Generic Fluent builder pattern. No order required. Can chain methods.
+/// Basic Generic Fluent builder pattern (use inheritance of builders - just one branch not a tree -). No order required. Can chain methods.
 /// </summary>
 /// 
 #region GenericFluentBuilder
