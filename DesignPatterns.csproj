@@ -9,15 +9,19 @@
 
   <ItemGroup>
     <Compile Remove="Builder\**" />
+    <Compile Remove="Factory\**" />
     <Compile Remove="ttest\**" />
     <EmbeddedResource Remove="Builder\**" />
+    <EmbeddedResource Remove="Factory\**" />
     <EmbeddedResource Remove="ttest\**" />
     <None Remove="Builder\**" />
+    <None Remove="Factory\**" />
     <None Remove="ttest\**" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="Builder\Builder.csproj" />
+    <ProjectReference Include="Factory\Factory.csproj" />
   </ItemGroup>
 
 </Project>

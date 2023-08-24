@@ -3,6 +3,8 @@ using Builder.FacetedBuilder;
 using Builder.FluentGeneric;
 using Builder.Stepwise;
 
+using Factory.FactoryMethod;
+
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
@@ -68,3 +70,13 @@ var stepwiseCarBuilder = StepwiseCarBuilder.Create().BuildChassis().BuildEngine(
 Console.WriteLine(stepwiseCarBuilder);
 #endregion
 
+
+
+/// <summary>
+/// Factory pattern.
+/// </summary>
+/// 
+#region Factory
+var factory = new CarFactory().ExecuteCreation(CarType.Normal, 100);
+factory.StartEngine();
+#endregion
