@@ -1,4 +1,5 @@
 ﻿using Builder;
+using Builder.FacetedBuilder;
 using Builder.FluentGeneric;
 using Builder.Stepwise;
 
@@ -38,6 +39,23 @@ Console.WriteLine(fluentCar);
 /// 
 #region GenericFluentBuilder
 var carBuilderGenericDirector = GenericCarBuilderDirector.NewCar.AddBody().AddWindows();
+Console.WriteLine(carBuilderGenericDirector.Build());
+#endregion
+
+
+/// <summary>
+/// Faceted builder pattern (use inheritance of builders - a tree of them -). No order required. Can chain methods.
+/// </summary>
+#region FacetedBuilder
+var carBuilderFacade = new CarBuilderFacade()
+	.Body
+		.AddBody().AddWindows()
+	.Mechanics
+		.AddChassis().AddEngine();
+	
+
+Console.WriteLine(carBuilderFacade.Build());
+
 #endregion
 
 
