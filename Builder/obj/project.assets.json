@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
-      "Builder/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "compile": {
-          "bin/placeholder/Builder.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Builder.dll": {}
-        }
-      }
-    }
+    "net7.0": {}
   },
-  "libraries": {
-    "Builder/1.0.0": {
-      "type": "project",
-      "path": "Builder/Builder.csproj",
-      "msbuildProject": "Builder/Builder.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net7.0": [
-      "Builder >= 1.0.0"
-    ]
+    "net7.0": []
   },
   "packageFolders": {
     "C:\\Users\\fran_\\.nuget\\packages\\": {}
@@ -32,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fran_\\source\\repos\\DesignPatterns\\DesignPatterns.csproj",
-      "projectName": "DesignPatterns",
-      "projectPath": "C:\\Users\\fran_\\source\\repos\\DesignPatterns\\DesignPatterns.csproj",
+      "projectUniqueName": "C:\\Users\\fran_\\source\\repos\\DesignPatterns\\Builder\\Builder.csproj",
+      "projectName": "Builder",
+      "projectPath": "C:\\Users\\fran_\\source\\repos\\DesignPatterns\\Builder\\Builder.csproj",
       "packagesPath": "C:\\Users\\fran_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fran_\\source\\repos\\DesignPatterns\\obj\\",
+      "outputPath": "C:\\Users\\fran_\\source\\repos\\DesignPatterns\\Builder\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fran_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,11 +33,7 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {
-            "C:\\Users\\fran_\\source\\repos\\DesignPatterns\\Builder\\Builder.csproj": {
-              "projectPath": "C:\\Users\\fran_\\source\\repos\\DesignPatterns\\Builder\\Builder.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

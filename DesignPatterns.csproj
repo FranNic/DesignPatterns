@@ -8,7 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Builder\Builder.csproj" />
+    <Compile Remove="Builder\**" />
+    <Compile Remove="ttest\**" />
+    <EmbeddedResource Remove="Builder\**" />
+    <EmbeddedResource Remove="ttest\**" />
+    <None Remove="Builder\**" />
+    <None Remove="ttest\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Builder\Builder.csproj" />
   </ItemGroup>
 
 </Project>
