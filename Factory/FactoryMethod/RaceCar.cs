@@ -6,13 +6,9 @@
 	using System.Text;
 	using System.Threading.Tasks;
 
-	// Concrete creator
-	public class RaceCarFactory : CarFactory
+	// Concrete product
+	class RaceCar : AbstractCar
 	{
-		public override AbstractCar CreateCar()
-		{
-			return new RaceCar();
-		}
+		public override void Drive() => Console.WriteLine("Driving a race car at high speed.");
 	}
-
 }

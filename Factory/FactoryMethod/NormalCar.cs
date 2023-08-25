@@ -6,8 +6,10 @@
 	using System.Text;
 	using System.Threading.Tasks;
 
-	public abstract class AbstractCarFactory
+	// Concrete Products
+	class NormalCar : AbstractCar
 	{
-		public abstract ICar CreateCar(double hP);
+		public override void Drive() => Console.WriteLine("Driving a normal car.");
 	}
+
 }

@@ -1,7 +1,11 @@
 ﻿namespace Factory.FactoryMethod
 {
-	public class NormalCarFactory : AbstractCarFactory
+	// Concrete Creators
+	public class NormalCarFactory : CarFactory
 	{
-		public override ICar CreateCar(double hP) => new NormalCarManager(hP);
+		public override AbstractCar CreateCar()
+		{
+			return new NormalCar();
+		}
 	}
 }

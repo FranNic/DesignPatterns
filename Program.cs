@@ -73,10 +73,19 @@ Console.WriteLine(stepwiseCarBuilder);
 
 
 /// <summary>
-/// Factory pattern.
+/// Factory method pattern.
 /// </summary>
 /// 
 #region Factory
-var factory = new CarFactory().ExecuteCreation(CarType.Normal, 100);
-factory.StartEngine();
+// Create factories
+CarFactory normalCarFactory = new NormalCarFactory();
+CarFactory raceCarFactory = new RaceCarFactory();
+
+// Create cars
+AbstractCar normalCar = normalCarFactory.CreateCar();
+AbstractCar raceCar = raceCarFactory.CreateCar();
+
+// Use the cars
+normalCar.Drive();
+raceCar.Drive();
 #endregion
