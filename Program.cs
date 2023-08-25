@@ -3,6 +3,7 @@ using Builder.FacetedBuilder;
 using Builder.FluentGeneric;
 using Builder.Stepwise;
 
+using Factory.AbstractFactory;
 using Factory.FactoryMethod;
 
 // See https://aka.ms/new-console-template for more information
@@ -78,8 +79,8 @@ Console.WriteLine(stepwiseCarBuilder);
 /// 
 #region Factory
 // Create factories
-CarFactory normalCarFactory = new NormalCarFactory();
-CarFactory raceCarFactory = new RaceCarFactory();
+Factory.FactoryMethod.CarFactory normalCarFactory = new Factory.FactoryMethod.NormalCarFactory();
+Factory.FactoryMethod.CarFactory raceCarFactory = new Factory.FactoryMethod.RaceCarFactory();
 
 // Create cars
 AbstractCar normalCar = normalCarFactory.CreateCar();
@@ -88,4 +89,33 @@ AbstractCar raceCar = raceCarFactory.CreateCar();
 // Use the cars
 normalCar.Drive();
 raceCar.Drive();
+#endregion
+
+
+/// <summary>
+/// Abstract Factory pattern.
+/// </summary>
+/// 
+#region AbstractFactory
+// Create factories
+Factory.AbstractFactory.CarFactory normalCarAbstractFactory = new Factory.AbstractFactory.NormalCarFactory();
+Factory.AbstractFactory.CarFactory raceCarAbstractFactory = new Factory.AbstractFactory.RaceCarFactory();
+Factory.AbstractFactory.CarFactory electricCarAbstractFactory = new Factory.AbstractFactory.ElectricCarFactory();
+
+// Create cars
+// englobe into a method to avoid repeating code
+var normalCarCreated = CreateCar(normalCarAbstractFactory);
+var raceCarCreated = CreateCar(raceCarAbstractFactory);
+var electricCarCreated = CreateCar(electricCarAbstractFactory);
+	
+// Note that the type of the variable is the abstract type, not the concrete type.
+static Factory.AbstractFactory.Car CreateCar(Factory.AbstractFactory.CarFactory car)
+{
+	return car.CreateCar();
+}
+
+normalCarCreated.Drive();
+raceCarCreated.Drive();
+electricCarCreated.Drive();
+
 #endregion
