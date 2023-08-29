@@ -7,6 +7,8 @@ using Builder.FacetedBuilder;
 using Builder.FluentGeneric;
 using Builder.Stepwise;
 
+using Composite;
+
 using Factory.AbstractFactory;
 using Factory.FactoryMethod;
 
@@ -128,7 +130,7 @@ electricCarCreated.Drive();
 // Create railroad
 var railroad = new Adapter.Railroad();
 IRailroadAdapter railroadAdapter = new Adapter.Car(railroad);
-
+railroad.DriveOnRails();
 
 Console.WriteLine("Adaptee interface is incompatible with the client.");
 Console.WriteLine("But with adapter client can call it's method.");
@@ -147,4 +149,35 @@ factory = new Bridge.MetallicPaintingFactory();
 var metallicRaceCar = new Bridge.RaceCar(factory);
 
 Console.WriteLine(metallicRaceCar.ToString());
+#endregion
+
+#region Composite
+var neuron1 = new Neuron(1);
+var neuron2 = new Neuron(2);
+var layer1 = new NeuronLayer();
+var layer2 = new NeuronLayer();
+
+neuron1.ConnectTo(neuron2);
+neuron1.ConnectTo(layer1);
+layer1.ConnectTo(layer2);
+
+
+Console.WriteLine(neuron1.ToString());
+#endregion
+
+#region Decorator
+var baseCar = new Decorator.BasicCar();
+Console.WriteLine(baseCar.ToString());
+
+var baseCarWithSport = new Decorator.SportPackage(baseCar);
+Console.WriteLine(baseCarWithSport.ToString());
+
+
+var carWithNight = new Decorator.NightPackage(baseCar);
+Console.WriteLine(carWithNight.ToString());
+
+var baseCarWithSportAndNight = new Decorator.NightPackage(baseCarWithSport);
+Console.WriteLine(baseCarWithSportAndNight.ToString());
+
+
 #endregion
