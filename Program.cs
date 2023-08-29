@@ -1,5 +1,7 @@
 ﻿using Adapter;
 
+using Bridge;
+
 using Builder;
 using Builder.FacetedBuilder;
 using Builder.FluentGeneric;
@@ -132,4 +134,17 @@ Console.WriteLine("Adaptee interface is incompatible with the client.");
 Console.WriteLine("But with adapter client can call it's method.");
 
 railroadAdapter.SetInRailroad();
+#endregion
+
+
+#region Bridge
+IPaitingFactory factory = new Bridge.MatePaintingFactory();
+var mateRaceCar = new Bridge.RaceCar(factory);
+
+Console.WriteLine(mateRaceCar.ToString());
+
+factory = new Bridge.MetallicPaintingFactory();
+var metallicRaceCar = new Bridge.RaceCar(factory);
+
+Console.WriteLine(metallicRaceCar.ToString());
 #endregion
