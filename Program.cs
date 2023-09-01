@@ -179,5 +179,20 @@ Console.WriteLine(carWithNight.ToString());
 var baseCarWithSportAndNight = new Decorator.NightPackage(baseCarWithSport);
 Console.WriteLine(baseCarWithSportAndNight.ToString());
 
+#endregion
 
+#region Facade
+
+Facade.Car myCar = new Facade.Car();
+myCar.Start();
+
+#endregion
+
+
+
+#region Flyweight
+//Flyweight would resemble Singleton if you somehow managed to reduce all shared states of the objects to just one flyweight object. But there are two fundamental differences between these patterns:
+//There should be only one Singleton instance, whereas a Flyweight class can have multiple instances with different intrinsic states.
+//The Singleton object can be mutable. Flyweight objects are immutable.
+//
 #endregion

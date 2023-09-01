@@ -13,6 +13,7 @@
     <Compile Remove="Builder\**" />
     <Compile Remove="Composite\**" />
     <Compile Remove="Decorator\**" />
+    <Compile Remove="Facade\**" />
     <Compile Remove="Factory\**" />
     <Compile Remove="ttest\**" />
     <EmbeddedResource Remove="Adapter\**" />
@@ -20,6 +21,7 @@
     <EmbeddedResource Remove="Builder\**" />
     <EmbeddedResource Remove="Composite\**" />
     <EmbeddedResource Remove="Decorator\**" />
+    <EmbeddedResource Remove="Facade\**" />
     <EmbeddedResource Remove="Factory\**" />
     <EmbeddedResource Remove="ttest\**" />
     <None Remove="Adapter\**" />
@@ -27,6 +29,7 @@
     <None Remove="Builder\**" />
     <None Remove="Composite\**" />
     <None Remove="Decorator\**" />
+    <None Remove="Facade\**" />
     <None Remove="Factory\**" />
     <None Remove="ttest\**" />
   </ItemGroup>
@@ -37,6 +40,7 @@
     <ProjectReference Include="Builder\Builder.csproj" />
     <ProjectReference Include="Composite\Composite.csproj" />
     <ProjectReference Include="Decorator\Decorator.csproj" />
+    <ProjectReference Include="Facade\Facade.csproj" />
     <ProjectReference Include="Factory\Factory.csproj" />
   </ItemGroup>
 
