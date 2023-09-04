@@ -16,6 +16,7 @@
     <Compile Remove="Decorator\**" />
     <Compile Remove="Facade\**" />
     <Compile Remove="Factory\**" />
+    <Compile Remove="Mediator\**" />
     <Compile Remove="Proxy\**" />
     <Compile Remove="ttest\**" />
     <EmbeddedResource Remove="Adapter\**" />
@@ -26,6 +27,7 @@
     <EmbeddedResource Remove="Decorator\**" />
     <EmbeddedResource Remove="Facade\**" />
     <EmbeddedResource Remove="Factory\**" />
+    <EmbeddedResource Remove="Mediator\**" />
     <EmbeddedResource Remove="Proxy\**" />
     <EmbeddedResource Remove="ttest\**" />
     <None Remove="Adapter\**" />
@@ -36,6 +38,7 @@
     <None Remove="Decorator\**" />
     <None Remove="Facade\**" />
     <None Remove="Factory\**" />
+    <None Remove="Mediator\**" />
     <None Remove="Proxy\**" />
     <None Remove="ttest\**" />
   </ItemGroup>
@@ -49,6 +52,7 @@
     <ProjectReference Include="Decorator\Decorator.csproj" />
     <ProjectReference Include="Facade\Facade.csproj" />
     <ProjectReference Include="Factory\Factory.csproj" />
+    <ProjectReference Include="Mediator\Mediator.csproj" />
     <ProjectReference Include="Proxy\Proxy.csproj" />
   </ItemGroup>
 
