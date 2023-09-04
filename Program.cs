@@ -14,6 +14,8 @@ using Composite;
 using Factory.AbstractFactory;
 using Factory.FactoryMethod;
 
+using Mediator;
+
 using System.Globalization;
 
 // See https://aka.ms/new-console-template for more information
@@ -221,4 +223,25 @@ root.Add(new DoubleAttackModifier(goblin));
 // Remember to call Handle() to propagate the request to the next handler
 root.Handle();
 Console.WriteLine(goblin);
+#endregion
+
+
+// Command pattern encapsulates all the information needed to perform an action or trigger an event at a later time.
+#region Mediator
+var room = new ChatRoom();
+
+var john = new Person("John");
+var jane = new Person("Jane");
+
+room.Join(john);
+room.Join(jane);
+
+john.Say("hi room");
+jane.Say("oh, hey john");
+
+var simon = new Person("Simon");
+room.Join(simon);
+simon.Say("hi everyone!");
+
+jane.PrivateMessage("Simon", "glad you could join us!");
 #endregion
