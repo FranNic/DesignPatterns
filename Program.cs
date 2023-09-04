@@ -1,12 +1,20 @@
 ﻿using Adapter;
 
+using Bridge;
+
 using Builder;
 using Builder.FacetedBuilder;
 using Builder.FluentGeneric;
 using Builder.Stepwise;
 
+using ChainOfResponsability;
+
+using Composite;
+
 using Factory.AbstractFactory;
 using Factory.FactoryMethod;
+
+using System.Globalization;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
@@ -126,10 +134,91 @@ electricCarCreated.Drive();
 // Create railroad
 var railroad = new Adapter.Railroad();
 IRailroadAdapter railroadAdapter = new Adapter.Car(railroad);
-
+railroad.DriveOnRails();
 
 Console.WriteLine("Adaptee interface is incompatible with the client.");
 Console.WriteLine("But with adapter client can call it's method.");
 
 railroadAdapter.SetInRailroad();
+#endregion
+
+
+#region Bridge
+IPaitingFactory factory = new Bridge.MatePaintingFactory();
+var mateRaceCar = new Bridge.RaceCar(factory);
+
+Console.WriteLine(mateRaceCar.ToString());
+
+factory = new Bridge.MetallicPaintingFactory();
+var metallicRaceCar = new Bridge.RaceCar(factory);
+
+Console.WriteLine(metallicRaceCar.ToString());
+#endregion
+
+#region Composite
+var neuron1 = new Neuron(1);
+var neuron2 = new Neuron(2);
+var layer1 = new NeuronLayer();
+var layer2 = new NeuronLayer();
+
+neuron1.ConnectTo(neuron2);
+neuron1.ConnectTo(layer1);
+layer1.ConnectTo(layer2);
+
+
+Console.WriteLine(neuron1.ToString());
+#endregion
+
+#region Decorator
+var baseCar = new Decorator.BasicCar();
+Console.WriteLine(baseCar.ToString());
+
+var baseCarWithSport = new Decorator.SportPackage(baseCar);
+Console.WriteLine(baseCarWithSport.ToString());
+
+
+var carWithNight = new Decorator.NightPackage(baseCar);
+Console.WriteLine(carWithNight.ToString());
+
+var baseCarWithSportAndNight = new Decorator.NightPackage(baseCarWithSport);
+Console.WriteLine(baseCarWithSportAndNight.ToString());
+
+#endregion
+
+#region Facade
+
+Facade.Car myCar = new Facade.Car();
+myCar.Start();
+
+#endregion
+
+
+
+#region Flyweight
+//Flyweight would resemble Singleton if you somehow managed to reduce all shared states of the objects to just one flyweight object. But there are two fundamental differences between these patterns:
+//There should be only one Singleton instance, whereas a Flyweight class can have multiple instances with different intrinsic states.
+//The Singleton object can be mutable. Flyweight objects are immutable.
+//
+#endregion
+
+#region Proxy
+
+// Protection proxy
+
+#endregion
+
+
+// Behavioral patterns
+
+// Similar to the decorator pattern, but the decorator pattern adds additional responsibilities to an object, whereas the chain of responsibility pattern adds additional responsibilities to an object's request.
+#region ChainOfResponsibility
+var goblin = new Creature("Goblin", 2, 2);
+Console.WriteLine(goblin);
+
+var root = new CreatureModifier(goblin);
+root.Add(new DoubleAttackModifier(goblin));
+
+// Remember to call Handle() to propagate the request to the next handler
+root.Handle();
+Console.WriteLine(goblin);
 #endregion

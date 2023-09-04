@@ -9,23 +9,47 @@
 
   <ItemGroup>
     <Compile Remove="Adapter\**" />
+    <Compile Remove="Bridge\**" />
     <Compile Remove="Builder\**" />
+    <Compile Remove="ChainOfResponsability\**" />
+    <Compile Remove="Composite\**" />
+    <Compile Remove="Decorator\**" />
+    <Compile Remove="Facade\**" />
     <Compile Remove="Factory\**" />
+    <Compile Remove="Proxy\**" />
     <Compile Remove="ttest\**" />
     <EmbeddedResource Remove="Adapter\**" />
+    <EmbeddedResource Remove="Bridge\**" />
     <EmbeddedResource Remove="Builder\**" />
+    <EmbeddedResource Remove="ChainOfResponsability\**" />
+    <EmbeddedResource Remove="Composite\**" />
+    <EmbeddedResource Remove="Decorator\**" />
+    <EmbeddedResource Remove="Facade\**" />
     <EmbeddedResource Remove="Factory\**" />
+    <EmbeddedResource Remove="Proxy\**" />
     <EmbeddedResource Remove="ttest\**" />
     <None Remove="Adapter\**" />
+    <None Remove="Bridge\**" />
     <None Remove="Builder\**" />
+    <None Remove="ChainOfResponsability\**" />
+    <None Remove="Composite\**" />
+    <None Remove="Decorator\**" />
+    <None Remove="Facade\**" />
     <None Remove="Factory\**" />
+    <None Remove="Proxy\**" />
     <None Remove="ttest\**" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="Adapter\Adapter.csproj" />
+    <ProjectReference Include="Bridge\Bridge.csproj" />
     <ProjectReference Include="Builder\Builder.csproj" />
+    <ProjectReference Include="ChainOfResponsability\ChainOfResponsability.csproj" />
+    <ProjectReference Include="Composite\Composite.csproj" />
+    <ProjectReference Include="Decorator\Decorator.csproj" />
+    <ProjectReference Include="Facade\Facade.csproj" />
     <ProjectReference Include="Factory\Factory.csproj" />
+    <ProjectReference Include="Proxy\Proxy.csproj" />
   </ItemGroup>
 
 </Project>
