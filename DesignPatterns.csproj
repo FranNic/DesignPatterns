@@ -8,18 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Adapter\**" />
     <Compile Remove="Builder\**" />
     <Compile Remove="Factory\**" />
     <Compile Remove="ttest\**" />
+    <EmbeddedResource Remove="Adapter\**" />
     <EmbeddedResource Remove="Builder\**" />
     <EmbeddedResource Remove="Factory\**" />
     <EmbeddedResource Remove="ttest\**" />
+    <None Remove="Adapter\**" />
     <None Remove="Builder\**" />
     <None Remove="Factory\**" />
     <None Remove="ttest\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="Adapter\Adapter.csproj" />
     <ProjectReference Include="Builder\Builder.csproj" />
     <ProjectReference Include="Factory\Factory.csproj" />
   </ItemGroup>

@@ -1,4 +1,6 @@
-﻿using Builder;
+﻿using Adapter;
+
+using Builder;
 using Builder.FacetedBuilder;
 using Builder.FluentGeneric;
 using Builder.Stepwise;
@@ -118,4 +120,16 @@ normalCarCreated.Drive();
 raceCarCreated.Drive();
 electricCarCreated.Drive();
 
+#endregion
+
+#region Adapter
+// Create railroad
+var railroad = new Adapter.Railroad();
+IRailroadAdapter railroadAdapter = new Adapter.Car(railroad);
+
+
+Console.WriteLine("Adaptee interface is incompatible with the client.");
+Console.WriteLine("But with adapter client can call it's method.");
+
+railroadAdapter.SetInRailroad();
 #endregion
