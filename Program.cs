@@ -12,6 +12,8 @@ using Composite;
 using Factory.AbstractFactory;
 using Factory.FactoryMethod;
 
+using System.Globalization;
+
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
@@ -195,4 +197,10 @@ myCar.Start();
 //There should be only one Singleton instance, whereas a Flyweight class can have multiple instances with different intrinsic states.
 //The Singleton object can be mutable. Flyweight objects are immutable.
 //
+#endregion
+
+#region Proxy
+
+// Protection proxy
+
 #endregion
