@@ -1,6 +1,9 @@
 ﻿using Builder;
+using Builder.FacetedBuilder;
 using Builder.FluentGeneric;
 using Builder.Stepwise;
+
+using Factory.FactoryMethod;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
@@ -38,6 +41,23 @@ Console.WriteLine(fluentCar);
 /// 
 #region GenericFluentBuilder
 var carBuilderGenericDirector = GenericCarBuilderDirector.NewCar.AddBody().AddWindows();
+Console.WriteLine(carBuilderGenericDirector.Build());
+#endregion
+
+
+/// <summary>
+/// Faceted builder pattern (use inheritance of builders - a tree of them -). No order required. Can chain methods.
+/// </summary>
+#region FacetedBuilder
+var carBuilderFacade = new CarBuilderFacade()
+	.Body
+		.AddBody().AddWindows()
+	.Mechanics
+		.AddChassis().AddEngine();
+	
+
+Console.WriteLine(carBuilderFacade.Build());
+
 #endregion
 
 
@@ -50,3 +70,22 @@ var stepwiseCarBuilder = StepwiseCarBuilder.Create().BuildChassis().BuildEngine(
 Console.WriteLine(stepwiseCarBuilder);
 #endregion
 
+
+
+/// <summary>
+/// Factory method pattern.
+/// </summary>
+/// 
+#region Factory
+// Create factories
+CarFactory normalCarFactory = new NormalCarFactory();
+CarFactory raceCarFactory = new RaceCarFactory();
+
+// Create cars
+AbstractCar normalCar = normalCarFactory.CreateCar();
+AbstractCar raceCar = raceCarFactory.CreateCar();
+
+// Use the cars
+normalCar.Drive();
+raceCar.Drive();
+#endregion
