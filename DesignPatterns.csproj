@@ -11,6 +11,7 @@
     <Compile Remove="Adapter\**" />
     <Compile Remove="Bridge\**" />
     <Compile Remove="Builder\**" />
+    <Compile Remove="ChainOfResponsability\**" />
     <Compile Remove="Composite\**" />
     <Compile Remove="Decorator\**" />
     <Compile Remove="Facade\**" />
@@ -20,6 +21,7 @@
     <EmbeddedResource Remove="Adapter\**" />
     <EmbeddedResource Remove="Bridge\**" />
     <EmbeddedResource Remove="Builder\**" />
+    <EmbeddedResource Remove="ChainOfResponsability\**" />
     <EmbeddedResource Remove="Composite\**" />
     <EmbeddedResource Remove="Decorator\**" />
     <EmbeddedResource Remove="Facade\**" />
@@ -29,6 +31,7 @@
     <None Remove="Adapter\**" />
     <None Remove="Bridge\**" />
     <None Remove="Builder\**" />
+    <None Remove="ChainOfResponsability\**" />
     <None Remove="Composite\**" />
     <None Remove="Decorator\**" />
     <None Remove="Facade\**" />
@@ -41,6 +44,7 @@
     <ProjectReference Include="Adapter\Adapter.csproj" />
     <ProjectReference Include="Bridge\Bridge.csproj" />
     <ProjectReference Include="Builder\Builder.csproj" />
+    <ProjectReference Include="ChainOfResponsability\ChainOfResponsability.csproj" />
     <ProjectReference Include="Composite\Composite.csproj" />
     <ProjectReference Include="Decorator\Decorator.csproj" />
     <ProjectReference Include="Facade\Facade.csproj" />

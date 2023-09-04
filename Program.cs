@@ -7,6 +7,8 @@ using Builder.FacetedBuilder;
 using Builder.FluentGeneric;
 using Builder.Stepwise;
 
+using ChainOfResponsability;
+
 using Composite;
 
 using Factory.AbstractFactory;
@@ -203,4 +205,20 @@ myCar.Start();
 
 // Protection proxy
 
+#endregion
+
+
+// Behavioral patterns
+
+// Similar to the decorator pattern, but the decorator pattern adds additional responsibilities to an object, whereas the chain of responsibility pattern adds additional responsibilities to an object's request.
+#region ChainOfResponsibility
+var goblin = new Creature("Goblin", 2, 2);
+Console.WriteLine(goblin);
+
+var root = new CreatureModifier(goblin);
+root.Add(new DoubleAttackModifier(goblin));
+
+// Remember to call Handle() to propagate the request to the next handler
+root.Handle();
+Console.WriteLine(goblin);
 #endregion
