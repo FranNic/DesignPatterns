@@ -9,6 +9,8 @@ using Builder.Stepwise;
 
 using ChainOfResponsability;
 
+using Command;
+
 using Composite;
 
 using Factory.AbstractFactory;
@@ -75,7 +77,7 @@ var carBuilderFacade = new CarBuilderFacade()
 		.AddBody().AddWindows()
 	.Mechanics
 		.AddChassis().AddEngine();
-	
+
 
 Console.WriteLine(carBuilderFacade.Build());
 
@@ -133,7 +135,7 @@ Factory.AbstractFactory.CarFactory electricCarAbstractFactory = new Factory.Abst
 var normalCarCreated = CreateCar(normalCarAbstractFactory);
 var raceCarCreated = CreateCar(raceCarAbstractFactory);
 var electricCarCreated = CreateCar(electricCarAbstractFactory);
-	
+
 // Note that the type of the variable is the abstract type, not the concrete type.
 static Factory.AbstractFactory.Car CreateCar(Factory.AbstractFactory.CarFactory car)
 {
@@ -301,5 +303,15 @@ Console.WriteLine("------------------------------------------------------");
 Console.WriteLine("------------------------------------------------------");
 
 #region Command
+
+
+var commandCar = new Command.Car();
+var listOfCommands = new List<ICommand> {
+	new Command.TurnOnHeadlightsCommand(commandCar), new Command.IncreaseAirConditioningCommand(commandCar), new Command.OpenWindowsCommand(commandCar) };
+
+foreach (var command in listOfCommands)
+{
+	command.Execute();
+}
 
 #endregion
