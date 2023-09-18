@@ -18,6 +18,8 @@ using Factory.FactoryMethod;
 
 using Mediator;
 
+using Observer;
+
 using System.Globalization;
 
 // See https://aka.ms/new-console-template for more information
@@ -313,5 +315,30 @@ foreach (var command in listOfCommands)
 {
 	command.Execute();
 }
+
+#endregion
+
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
+
+
+#region Observer
+// Create a car
+Observer.Car observerCar = new Observer.Car();
+
+// Create drivers (observers)
+Driver driver1 = new Driver("Alice", observerCar);
+Driver driver2 = new Driver("Bob", observerCar);
+
+// Change the car's state and notify observers
+observerCar.SetCarState("Running");
+
+// Detach an observer
+observerCar.DetachDriver(driver1);
+
+// Change the car's state again
+observerCar.SetCarState("Stopped");
+  
+
 
 #endregion
