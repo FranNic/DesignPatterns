@@ -21,9 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facade", "Facade\Facade.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proxy", "Proxy\Proxy.csproj", "{3EF1590D-7316-4FA5-B7D6-A03F1D0DE6D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsability", "ChainOfResponsability\ChainOfResponsability.csproj", "{3BABA4A5-A9B6-42E7-8619-944AB1405C31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChainOfResponsability", "ChainOfResponsability\ChainOfResponsability.csproj", "{3BABA4A5-A9B6-42E7-8619-944AB1405C31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator", "Mediator\Mediator.csproj", "{9DE91F79-41A9-4194-B003-E88496F844E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediator", "Mediator\Mediator.csproj", "{9DE91F79-41A9-4194-B003-E88496F844E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visitor", "Visitor\Visitor.csproj", "{B3FE8205-3F53-4F3F-BC44-88E708D4AAB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{9DE91F79-41A9-4194-B003-E88496F844E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DE91F79-41A9-4194-B003-E88496F844E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DE91F79-41A9-4194-B003-E88496F844E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3FE8205-3F53-4F3F-BC44-88E708D4AAB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3FE8205-3F53-4F3F-BC44-88E708D4AAB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3FE8205-3F53-4F3F-BC44-88E708D4AAB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3FE8205-3F53-4F3F-BC44-88E708D4AAB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

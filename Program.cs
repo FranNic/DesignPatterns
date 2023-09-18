@@ -21,6 +21,8 @@ using System.Globalization;
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 /// <summary>
 /// Basic builder pattern. No order required. Cannot chain methods. One can add a Director class to enforce order and encapsulate business logic.
 /// </summary>
@@ -37,6 +39,8 @@ Console.WriteLine(car);
 #endregion
 
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 /// <summary>
 /// Basic Fluent builder pattern. No order required. Can chain methods.
 /// </summary>
@@ -48,6 +52,8 @@ var fluentCar = fluentCarBuilder.GetCar();
 Console.WriteLine(fluentCar);
 #endregion
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 /// <summary>
 /// Basic Generic Fluent builder pattern (use inheritance of builders - just one branch not a tree -). No order required. Can chain methods.
 /// </summary>
@@ -58,6 +64,8 @@ Console.WriteLine(carBuilderGenericDirector.Build());
 #endregion
 
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 /// <summary>
 /// Faceted builder pattern (use inheritance of builders - a tree of them -). No order required. Can chain methods.
 /// </summary>
@@ -73,6 +81,8 @@ Console.WriteLine(carBuilderFacade.Build());
 
 #endregion
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 
 /// <summary>
 /// Stepwise builder pattern. Order required. Must chain methods.
@@ -85,6 +95,8 @@ Console.WriteLine(stepwiseCarBuilder);
 
 
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 /// <summary>
 /// Factory method pattern.
 /// </summary>
@@ -103,6 +115,8 @@ normalCar.Drive();
 raceCar.Drive();
 #endregion
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 
 /// <summary>
 /// Abstract Factory pattern.
@@ -132,6 +146,8 @@ electricCarCreated.Drive();
 
 #endregion
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 #region Adapter
 // Create railroad
 var railroad = new Adapter.Railroad();
@@ -145,6 +161,8 @@ railroadAdapter.SetInRailroad();
 #endregion
 
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 #region Bridge
 IPaitingFactory factory = new Bridge.MatePaintingFactory();
 var mateRaceCar = new Bridge.RaceCar(factory);
@@ -157,6 +175,8 @@ var metallicRaceCar = new Bridge.RaceCar(factory);
 Console.WriteLine(metallicRaceCar.ToString());
 #endregion
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 #region Composite
 var neuron1 = new Neuron(1);
 var neuron2 = new Neuron(2);
@@ -171,6 +191,8 @@ layer1.ConnectTo(layer2);
 Console.WriteLine(neuron1.ToString());
 #endregion
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 #region Decorator
 var baseCar = new Decorator.BasicCar();
 Console.WriteLine(baseCar.ToString());
@@ -187,6 +209,8 @@ Console.WriteLine(baseCarWithSportAndNight.ToString());
 
 #endregion
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 #region Facade
 
 Facade.Car myCar = new Facade.Car();
@@ -195,6 +219,8 @@ myCar.Start();
 #endregion
 
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 
 #region Flyweight
 //Flyweight would resemble Singleton if you somehow managed to reduce all shared states of the objects to just one flyweight object. But there are two fundamental differences between these patterns:
@@ -210,6 +236,8 @@ myCar.Start();
 #endregion
 
 
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
 // Behavioral patterns
 
 // Similar to the decorator pattern, but the decorator pattern adds additional responsibilities to an object, whereas the chain of responsibility pattern adds additional responsibilities to an object's request.
@@ -226,7 +254,10 @@ Console.WriteLine(goblin);
 #endregion
 
 
-// Command pattern encapsulates all the information needed to perform an action or trigger an event at a later time.
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
+
+// Mediator pattern is very similar to the observer pattern. The difference is that in the observer pattern, all observers are subscribed to the subject, and they are notified when any event occurs in the subject. In the mediator pattern, the observers are not subscribed to the subject. Instead, they are subscribed to the mediator, and the mediator notifies them when any event occurs in the subject.
 #region Mediator
 var room = new ChatRoom();
 
@@ -244,4 +275,31 @@ room.Join(simon);
 simon.Say("hi everyone!");
 
 jane.PrivateMessage("Simon", "glad you could join us!");
+#endregion
+
+
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
+#region Visitor
+var listOfCars = new List<Visitor.ICar>
+{
+	new Visitor.SUV(),
+	new Visitor.Sedan(),
+	new Visitor.Truck()
+};
+
+var maintenanceVisitor = new Visitor.MaintenanceVisitor();
+
+foreach (var carType in listOfCars)
+{
+	carType.AcceptVisitor(maintenanceVisitor);
+}
+#endregion
+
+
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
+
+#region Command
+
 #endregion
