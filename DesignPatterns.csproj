@@ -20,6 +20,7 @@
     <Compile Remove="Mediator\**" />
     <Compile Remove="Observer\**" />
     <Compile Remove="Proxy\**" />
+    <Compile Remove="State\**" />
     <Compile Remove="ttest\**" />
     <Compile Remove="Visitor\**" />
     <EmbeddedResource Remove="Adapter\**" />
@@ -34,6 +35,7 @@
     <EmbeddedResource Remove="Mediator\**" />
     <EmbeddedResource Remove="Observer\**" />
     <EmbeddedResource Remove="Proxy\**" />
+    <EmbeddedResource Remove="State\**" />
     <EmbeddedResource Remove="ttest\**" />
     <EmbeddedResource Remove="Visitor\**" />
     <None Remove="Adapter\**" />
@@ -48,6 +50,7 @@
     <None Remove="Mediator\**" />
     <None Remove="Observer\**" />
     <None Remove="Proxy\**" />
+    <None Remove="State\**" />
     <None Remove="ttest\**" />
     <None Remove="Visitor\**" />
   </ItemGroup>
@@ -65,6 +68,7 @@
     <ProjectReference Include="Mediator\Mediator.csproj" />
     <ProjectReference Include="Observer\Observer.csproj" />
     <ProjectReference Include="Proxy\Proxy.csproj" />
+    <ProjectReference Include="State\State.csproj" />
     <ProjectReference Include="Visitor\Visitor.csproj" />
   </ItemGroup>
 

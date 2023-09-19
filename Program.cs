@@ -20,7 +20,10 @@ using Mediator;
 
 using Observer;
 
+using State;
+
 using System.Globalization;
+using System.Reflection;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
@@ -302,6 +305,7 @@ foreach (var carType in listOfCars)
 
 
 Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("Command");
 Console.WriteLine("------------------------------------------------------");
 
 // Command establishes unidirectional connections between senders and receivers.
@@ -343,4 +347,22 @@ observerCar.SetCarState("Stopped");
 
 
 Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("State");
 Console.WriteLine("------------------------------------------------------");
+
+// State allows an object to alter its behavior when its internal state changes. The object will appear to change its class.
+#region State
+var listOfStates = Assembly.GetAssembly(typeof(ITrafficLightState)).GetTypes()
+	.Where(t => t.IsClass && t.Namespace == "State" && t.GetInterfaces().Contains(typeof(ITrafficLightState)))
+	.Select(t => Activator.CreateInstance(t) as ITrafficLightState)
+	.Count();
+
+var trafficLight = new TrafficLight();
+
+trafficLight.ReportState();
+for (int i = 0; i < listOfStates*3; i++)
+{
+	trafficLight.Change();
+	Thread.Sleep(1000);
+}
+#endregion
