@@ -244,7 +244,7 @@ Console.WriteLine("------------------------------------------------------");
 Console.WriteLine("------------------------------------------------------");
 // Behavioral patterns
 
-// Similar to the decorator pattern, but the decorator pattern adds additional responsibilities to an object, whereas the chain of responsibility pattern adds additional responsibilities to an object's request.
+//Chain of Responsibility passes a request sequentially along a dynamic chain of potential receivers until one of them handles it.
 #region ChainOfResponsibility
 var goblin = new Creature("Goblin", 2, 2);
 Console.WriteLine(goblin);
@@ -261,7 +261,7 @@ Console.WriteLine(goblin);
 Console.WriteLine("------------------------------------------------------");
 Console.WriteLine("------------------------------------------------------");
 
-// Mediator pattern is very similar to the observer pattern. The difference is that in the observer pattern, all observers are subscribed to the subject, and they are notified when any event occurs in the subject. In the mediator pattern, the observers are not subscribed to the subject. Instead, they are subscribed to the mediator, and the mediator notifies them when any event occurs in the subject.
+// Mediator eliminates direct connections between senders and receivers, forcing them to communicate indirectly via a mediator object.
 #region Mediator
 var room = new ChatRoom();
 
@@ -304,9 +304,8 @@ foreach (var carType in listOfCars)
 Console.WriteLine("------------------------------------------------------");
 Console.WriteLine("------------------------------------------------------");
 
+// Command establishes unidirectional connections between senders and receivers.
 #region Command
-
-
 var commandCar = new Command.Car();
 var listOfCommands = new List<ICommand> {
 	new Command.TurnOnHeadlightsCommand(commandCar), new Command.IncreaseAirConditioningCommand(commandCar), new Command.OpenWindowsCommand(commandCar) };
@@ -319,9 +318,10 @@ foreach (var command in listOfCommands)
 #endregion
 
 Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("Observer");
 Console.WriteLine("------------------------------------------------------");
 
-
+// observer pattern allows an object (known as a subject) to notify other objects (known as observers) when a change in its state occurs.
 #region Observer
 // Create a car
 Observer.Car observerCar = new Observer.Car();
@@ -338,7 +338,9 @@ observerCar.DetachDriver(driver1);
 
 // Change the car's state again
 observerCar.SetCarState("Stopped");
-  
-
 
 #endregion
+
+
+Console.WriteLine("------------------------------------------------------");
+Console.WriteLine("------------------------------------------------------");
